@@ -16,7 +16,5 @@ class ReflectionInPhpNumber1Introduction {
     }
 }
 
-function multiply($a, $b) {
-    return $a * $b;
-}
+
 

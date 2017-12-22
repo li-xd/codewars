@@ -4,7 +4,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use Code;
 
-class MultiplyStringTest extends TestCase {
+class ReflectionInPhpNumber1IntroductionTest extends TestCase {
     
   private static $service = null;
  
