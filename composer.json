@@ -7,6 +7,9 @@
     },
     
     "autoload": {
-        "classmap" : ["./"]
+        "classmap" : ["./"],
+        "files" : [
+            "./Tests/function_list.php"
+        ]
     }
 }

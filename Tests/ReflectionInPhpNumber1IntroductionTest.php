@@ -14,11 +14,8 @@ class ReflectionInPhpNumber1IntroductionTest extends TestCase {
   }
   
   public function testDescriptionExample() {
-    $this->assertEquals([2, 2, false, false, false, true], self::$service->getInfo('multiply'));
+    $this->assertEquals([2, 2, false, false, false, true], self::$service->getInfo('reflection_in_php_number_1_introduction_test_multiply'));
   }
 
 }
 
-function multiply($a, $b) {
-    return $a * $b;
-}

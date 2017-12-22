@@ -14,9 +14,7 @@ class ReflectionInPhpDissectingAFunctionViaReflectionParameterTest extends TestC
   }
   
   public function testDescriptionExample() {
-    $this->assertEquals("d, f", self::$service->filter_parameters('example'));
+    $this->assertEquals("d, f", self::$service->filter_parameters('reflection_in_php_dissecting_a_function_via_reflection_parameter_test_example'));
   }
 
 }
-
-function example($a, int $b, bool $c, int $d = 5, float $e = 5.00, int $f = 5, int $g = 15) { /* ... */ }
