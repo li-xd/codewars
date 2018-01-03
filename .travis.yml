@@ -4,3 +4,6 @@ php:
 before_script:
   - composer install
 script: vendor/bin/phpunit Tests
+
+notifications:
+    slack: xiaodongli:eHLvJqxA6aFD0HmSMz19LnRg
