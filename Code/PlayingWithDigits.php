@@ -4,10 +4,10 @@ namespace Code;
 
 class PlayingWithDigits
 {
-    function digPow($n, $p)
+    public function digPow($n, $p)
     {
         $sum = 0;
-        foreach(str_split($n) as $number) {
+        foreach (str_split($n) as $number) {
             $sum += pow($number, $p++);
         }
 

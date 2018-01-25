@@ -2,8 +2,10 @@
 
 namespace Code;
 
-class ValidBraces {
-    public function validBraces($braces) {
+class ValidBraces
+{
+    public function validBraces($braces)
+    {
         $braceList = ["(" => ")", "[" => "]", "{" => "}"];
         $tempList = [];
         
@@ -12,16 +14,18 @@ class ValidBraces {
         for ($i = 0; $i < $length; ++$i) {
             $brace = $braces[$i];
             
-            if (in_array($brace, array_keys($braceList))) 
+            if (in_array($brace, array_keys($braceList))) {
                 $tempList[] = $brace;
-            else {
-                if (!count($tempList) || $braceList[array_pop($tempList)] != $brace)   
+            } else {
+                if (!count($tempList) || $braceList[array_pop($tempList)] != $brace) {
                     return false;
+                }
             }
         }
         
-        if (count($tempList))
+        if (count($tempList)) {
             return false;
+        }
             
         return true;
     }

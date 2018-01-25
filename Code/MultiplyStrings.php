@@ -1,18 +1,19 @@
 <?php
 namespace Code;
 
-class MultiplyStrings {
-
-    function multiply(string $a, string $b): string {
-        // 首先将 $b 和 $a 依照手算乘法 计算和 
-         $aLen = strlen($a);
-         $bLen = strlen($b);
+class MultiplyStrings
+{
+    public function multiply(string $a, string $b): string
+    {
+        // 首先将 $b 和 $a 依照手算乘法 计算和
+        $aLen = strlen($a);
+        $bLen = strlen($b);
          
-         // 总数列表
-         $count = [];
+        // 总数列表
+        $count = [];
          
-         for ($i = 0; $i < $aLen; ++$i) {
-             $indexI = $aLen - $i - 1;
+        for ($i = 0; $i < $aLen; ++$i) {
+            $indexI = $aLen - $i - 1;
             // 单个项 列表
             $item = [];
             for ($j = 0; $j < $bLen; ++$j) {
@@ -22,7 +23,7 @@ class MultiplyStrings {
                 $item = $this->calItemAddition($item, $i + $j, $a[$indexI] * $b[$indexJ]);
             }
             $count = $this->calCountAddition($item, $count);
-         }
+        }
          
         $count = implode('', array_reverse($count));
         
@@ -30,11 +31,14 @@ class MultiplyStrings {
         // 然后从最高位开始 去掉 0
     }
     
-    private function calCountAddition(array &$itemList, array &$countList) {
+    private function calCountAddition(array &$itemList, array &$countList)
+    {
         $maxLen = max(count($countList), count($itemList));
         // 将前面可能会用到的位数补全
         // 在 最大位 前加一位
-        while (count($countList) < $maxLen + 1) $countList[] = 0;
+        while (count($countList) < $maxLen + 1) {
+            $countList[] = 0;
+        }
         
         // 两个数组 做加法运算
         for ($i = 0; $i < $maxLen; ++$i) {
@@ -50,10 +54,13 @@ class MultiplyStrings {
         return $countList;
     }
     
-    private function calItemAddition(array &$itemList, int $index, int $value) {
+    private function calItemAddition(array &$itemList, int $index, int $value)
+    {
         // 将前面可能会用到的位数补全
         // 在 index 前加一位
-        while (count($itemList) < $index + 1) $itemList[] = 0;
+        while (count($itemList) < $index + 1) {
+            $itemList[] = 0;
+        }
         
         // 计算 新生成的该位结果
         $value += $itemList[$index];

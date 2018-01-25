@@ -1,8 +1,10 @@
 <?php
 namespace Code;
 
-class CompareStringsBySumOfChars {
-    function compare($s1, $s2) {
+class CompareStringsBySumOfChars
+{
+    public function compare($s1, $s2)
+    {
         $s1 = strtoupper($s1);
         $s2 = strtoupper($s2);
         
@@ -12,8 +14,9 @@ class CompareStringsBySumOfChars {
         return $s1_value == $s2_value;
     }
     
-    function calStringASCII($string) {
-        return array_reduce(str_split($string), function($carry, $item) {
+    public function calStringASCII($string)
+    {
+        return array_reduce(str_split($string), function ($carry, $item) {
             return $carry + ord($item);
         });
     }

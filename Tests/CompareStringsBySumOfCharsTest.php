@@ -4,15 +4,17 @@ namespace Tests;
 use Code;
 use PHPUnit\Framework\TestCase;
 
-class CompareStringsBySumOfCharsTest extends TestCase {
+class CompareStringsBySumOfCharsTest extends TestCase
+{
     private static $service = null;
  
-    static function setUpBeforeClass()
-    { 
+    public static function setUpBeforeClass()
+    {
         self::$service = new Code\CompareStringsBySumOfChars();
     }
     
-    public function testExample() {
+    public function testExample()
+    {
         $this->assertSame(true, self::$service->compare("AD", "BC"));
         $this->assertSame(false, self::$service->compare("AD", "DD"));
         $this->assertSame(true, self::$service->compare("FG", "fg"));

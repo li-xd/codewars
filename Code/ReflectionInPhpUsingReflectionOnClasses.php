@@ -1,8 +1,10 @@
 <?php
 namespace Code;
 
-class ReflectionInPhpUsingReflectionOnClasses {
-    function get_class_overview($c) {
+class ReflectionInPhpUsingReflectionOnClasses
+{
+    public function get_class_overview($c)
+    {
         $refectionClass = new \ReflectionClass($c);
    
         return [
@@ -19,4 +21,3 @@ class ReflectionInPhpUsingReflectionOnClasses {
         ];
     }
 }
-

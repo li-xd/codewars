@@ -1,8 +1,8 @@
 <?php
 namespace Code;
 
-class ObjectOrientedClassesPublicPropertiesAndMethods {
-    
+class ObjectOrientedClassesPublicPropertiesAndMethods
+{
 }
 
 global $object_oriented_classes_public_properties_and_methods;

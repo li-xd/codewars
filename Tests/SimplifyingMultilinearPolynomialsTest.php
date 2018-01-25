@@ -1,15 +1,17 @@
 <?php
 
 namespace Tests;
+
 use PHPUnit\Framework\TestCase;
 use Code;
 
-class SimplifyingMultilinearPolynomialsTest extends TestCase {
+class SimplifyingMultilinearPolynomialsTest extends TestCase
+{
     private static $service = null;
  
-    static function setUpBeforeClass()
-    { 
-      self::$service = new Code\SimplifyingMultilinearPolynomials();
+    public static function setUpBeforeClass()
+    {
+        self::$service = new Code\SimplifyingMultilinearPolynomials();
     }
     
     // test function names should start with "test"

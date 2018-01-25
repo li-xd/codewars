@@ -4,9 +4,11 @@ namespace Code;
 
 class RectangleIntoSquares
 {
-    function sqInRect($lng, $wdth)
+    public function sqInRect($lng, $wdth)
     {
-        if ($lng == $wdth) return null;
+        if ($lng == $wdth) {
+            return null;
+        }
 
         // 结果 list
         $list = [];
@@ -18,10 +20,11 @@ class RectangleIntoSquares
             // 将裁剪边 计入到 list 中
             $list[] = $min;
 
-            if ($lng != $wdth)
+            if ($lng != $wdth) {
                 $lng != $min && $lng -= $min or $wdth != $min && $wdth -= $min;
-            else
+            } else {
                 $lng = $wdth = 0;
+            }
         }
         return $list;
     }

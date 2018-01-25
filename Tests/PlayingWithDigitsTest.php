@@ -10,7 +10,7 @@ class PlayingWithDigitsTest extends TestCase
 {
     private static $service = null;
 
-    static function setUpBeforeClass()
+    public static function setUpBeforeClass()
     {
         self::$service = new Code\PlayingWithDigits();
     }

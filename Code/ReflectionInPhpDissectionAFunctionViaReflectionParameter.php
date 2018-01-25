@@ -1,16 +1,19 @@
 <?php
 namespace Code;
 
-class ReflectionInPhpDissectionAFunctionViaReflectionParameter {
-    function filter_parameters($fn) {
+class ReflectionInPhpDissectionAFunctionViaReflectionParameter
+{
+    public function filter_parameters($fn)
+    {
         $function = new \ReflectionFunction($fn);
         $parameterList = $function->getParameters();
   
         $resultList = [];
   
         foreach ($parameterList as $parameter) {
-            if (!$parameter->hasType() || !$parameter->isDefaultValueAvailable()) 
+            if (!$parameter->hasType() || !$parameter->isDefaultValueAvailable()) {
                 continue;
+            }
     
     
             $default = $parameter->getDefaultValue();
@@ -22,4 +25,3 @@ class ReflectionInPhpDissectionAFunctionViaReflectionParameter {
         return implode(', ', $resultList);
     }
 }
-

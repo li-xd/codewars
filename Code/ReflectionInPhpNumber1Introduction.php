@@ -1,8 +1,10 @@
 <?php
 namespace Code;
 
-class ReflectionInPhpNumber1Introduction {
-    public function getInfo($fn) {
+class ReflectionInPhpNumber1Introduction
+{
+    public function getInfo($fn)
+    {
         $function = new \ReflectionFunction($fn);
         
         return [

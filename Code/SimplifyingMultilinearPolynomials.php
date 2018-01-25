@@ -1,18 +1,19 @@
 <?php
 namespace Code;
 
-class SimplifyingMultilinearPolynomials {
-    function simplify($poly)
-    {   
+class SimplifyingMultilinearPolynomials
+{
+    public function simplify($poly)
+    {
         // 表达式中只存在 + - 两种形式
         // 拆出 + 部分
-         $handleList = explode('+', $poly);
+        $handleList = explode('+', $poly);
          
-         // 首先将 表达式打散 [表达式] => ['数量']
-         $calList = [];
+        // 首先将 表达式打散 [表达式] => ['数量']
+        $calList = [];
          
-         // 以 - 方式拆分
-         foreach ($handleList as $handleItem) {
+        // 以 - 方式拆分
+        foreach ($handleList as $handleItem) {
             $handleItem = explode('-', $handleItem);
             // 为正数 flag
             $flag = false;
@@ -45,22 +46,25 @@ class SimplifyingMultilinearPolynomials {
         $result = '';
         ksort($calList);
         
-        foreach($calList as $index => $cal) {
+        foreach ($calList as $index => $cal) {
             ksort($cal);
             
             foreach ($cal as $itemIndex => $value) {
-                if (!$value || $value == -0)
+                if (!$value || $value == -0) {
                     continue;
+                }
                     
-                if ($value > 0 && $result)
+                if ($value > 0 && $result) {
                     $result .= '+';
+                }
                     
-                if ($value == 1) 
+                if ($value == 1) {
                     $result .= $itemIndex;
-                else if ($value == -1) 
+                } elseif ($value == -1) {
                     $result .= '-'.$itemIndex;
-                else 
+                } else {
                     $result .= $value . $itemIndex;
+                }
             }
         }
         
